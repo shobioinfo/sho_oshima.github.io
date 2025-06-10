@@ -7,7 +7,7 @@
   
   /* ヘッダーを画面幅いっぱいにする */
   .header {
-    background-color: #00205B;
+    background-color: #6b254d;
     color: white;
     padding: 15px 20px;
     display: flex;
@@ -73,14 +73,14 @@
     font-weight: bold;
     margin-bottom: 10px;
     font-family: Verdana, sans-serif;
-    color: #00205B;
+    color: #6b254d;
   }
   
   /* PORTFOLIO の部分 */
   .mv-subtitle {
     font-size: 18px;
     font-weight: bold;        /* ← 太文字に */
-    color: #00205B;           /* ← ヘッダーと同じ色に */
+    color: #6b254d;           /* ← ヘッダーと同じ色に */
     margin-bottom: 30px;
     letter-spacing: 2px;
   }
@@ -105,7 +105,7 @@
   .section-title {
     text-align: center;
     font-size: 32px;
-    color: #00205B;
+    color: #6b254d;
     font-weight: bold;
     margin-bottom: 60px;
     font-family: Verdana, sans-serif;
@@ -197,7 +197,7 @@
   .section-title {
     text-align: center;
     font-size: 32px;
-    color: #00205B;
+    color: #6b254d;
     font-weight: bold;
     margin-bottom: 60px;
     font-family: Verdana, sans-serif;
@@ -239,7 +239,7 @@
 .skill-title {
   font-size: 18px;
   font-weight: bold;
-  color: #00205B;
+  color: #6b254d;
   margin-bottom: 10px;
   font-family: Verdana, sans-serif;
 }
@@ -270,7 +270,7 @@
   /* メールアドレス */
   .contact-email {
     font-size: 14px;
-    color: #00205B;
+    color: #6b254d;
     font-family: Verdana, sans-serif;
   }
   
@@ -281,7 +281,7 @@
     bottom: 20px;
     width: 48px;
     height: 48px;
-    background-color: #00205B;
+    background-color: #6b254d;
     color: white;
     border-radius: 50%;
     display: flex;
