@@ -282,7 +282,7 @@
 
 /* セクションタイトル上部の余白を増やす */
 .internship.section {
-  padding-top: 120px;  /* ↑ セクション全体の上余白 */
+  padding-top: 100px;  /* ↑ セクション全体の上余白 */
 }
 
 @media (max-width: 767px) {
