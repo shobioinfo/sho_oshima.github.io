@@ -252,42 +252,42 @@
 }
 
 /* INTERNSHIP セクション */
-.internship-container {
+
+/* INTERNSHIP リストスタイル */
+.internship-list {
   max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 0 20px;
-}
-
-.internship-item {
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  padding: 20px;
-}
-
-.internship-company {
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--primary-color); /* テーマカラーを使うならこう */
-  margin-bottom: 10px;
-}
-
-.internship-role {
-  font-size: 16px;
-  line-height: 1.6;
+  margin: 0 auto 60px;       /* セクション下部に余白を */
+  padding: 0 20px 0 40px;     /* 左に番号分のインデント */
+  list-style: decimal inside; /* 内側番号＋ドット */
   color: #333;
 }
 
-@media screen and (min-width: 768px) {
-  .internship-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .internship-item {
-    flex: 1;
-    max-width: 48%;
+.internship-list li {
+  margin-bottom: 24px;        /* 各項目の縦間隔 */
+  line-height: 1.6;
+}
+
+.internship-list strong {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.internship-list em {
+  display: block;
+  margin-top: 4px;
+  color: #666;
+  font-style: normal;
+  font-size: 14px;
+}
+
+/* セクションタイトル上部の余白を増やす */
+.internship.section {
+  padding-top: 120px;  /* ↑ セクション全体の上余白 */
+}
+
+@media (max-width: 767px) {
+  .internship-list {
+    padding: 0 20px;   /* モバイルではインデント少なめ */
   }
 }
 
