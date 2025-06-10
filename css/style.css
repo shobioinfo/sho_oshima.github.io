@@ -87,7 +87,7 @@
   
   /* 説明文（研究内容） */
   .mv-description {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.8;
     color: #333;
     max-width: 1100px;       /* ← 最大幅を制限して読みやすく */
@@ -249,6 +249,46 @@
   font-size: 14px;
   line-height: 1.6;
   color: #333;
+}
+
+/* INTERNSHIP セクション */
+.internship-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.internship-item {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.internship-company {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-color); /* テーマカラーを使うならこう */
+  margin-bottom: 10px;
+}
+
+.internship-role {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+@media screen and (min-width: 768px) {
+  .internship-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .internship-item {
+    flex: 1;
+    max-width: 48%;
+  }
 }
 
   
