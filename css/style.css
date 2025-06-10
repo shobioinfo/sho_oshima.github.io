@@ -113,8 +113,8 @@
   
   /* 顔写真（縦長楕円・枠なし） */
   .about-image img {
-    width: 220px;
-    height: 220px;
+    width: 190px;
+    height: 190px;
     object-fit: cover;
     border-radius: 50% / 60%;
     border: none;
