@@ -417,7 +417,7 @@
   }
   .gnav-item a {
     color: white;
-    font-size: 14px;
+    font-size: 10px;
     padding: 4px 8px;
     white-space: nowrap;     /* 改行しない */
   }
