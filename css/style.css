@@ -62,7 +62,7 @@
   
  /* メインビジュアル全体 */
 .mv {
-    background-color: #f8f9fb;
+    background-color: #ffffff;
     padding: 160px 160px; /* 上下の余白を大きく（以前は60px） */
     text-align: center;
   }
