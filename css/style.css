@@ -385,70 +385,84 @@
    スマートフォン向けの調整
 ----------------------------- */
 @media screen and (max-width: 767px) {
+
+  /* ヘッダーをコンパクトに */
   .header {
-    padding: 8px 16px;    /* 上下パディングを小さく */
+    display: flex;
+    justify-content: center; /* ロゴを消してナビを中央寄せ */
+    align-items: center;
+    padding: 8px 0;           /* 横は0、上下だけ */
   }
 
-  .header-logo img {
-    height: 6px;         /* ロゴを縮小 */
+  /* ロゴは非表示 */
+  .header-logo {
+    display: none;
   }
 
+  /* ナビを横スクロール＋中央寄せ */
+  .header-nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .gnav-list {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0 10px;
+    justify-content: center;
+  }
+  .gnav-item {
+    flex: 0 0 auto;
+    margin: 0 6px;
+  }
   .gnav-item a {
-    font-size: 8px;      /* ナビ文字を小さく */
-    padding: 0 3px;       /* 左右余白を減らす */
+    color: white;
+    font-size: 14px;
+    padding: 4px 8px;
+    white-space: nowrap;     /* 改行しない */
   }
 
-  /* セクションアンカーのずれ対応 */
+  /* 既存スクロールマージンなど */
   .section {
-    scroll-margin-top: 60px;  /* ヘッダー高さ分だけオフセット */
+    scroll-margin-top: 60px;
   }
 
-  /* RECENT WORKS セクションの余白を調整 */
+  /* 以下既存モバイル用スタイル… */
   .works {
     padding: 80px 20px;
   }
-
-  /* 発表リストの横幅調整 */
   .works-list {
     width: 100%;
     margin: 0 0 40px 0;
   }
-
-  /* SKILL セクションを縦並びに */
   .skill-container {
     flex-direction: column;
     align-items: center;
   }
-
   .skill-item {
     max-width: 100%;
     margin-bottom: 30px;
   }
-
   .skill-img {
     width: 150px;
     height: 150px;
   }
-
   .mv {
     padding: 100px 20px;
   }
-
   .mv-title {
     font-size: 36px;
   }
-
   .mv-subtitle {
     font-size: 16px;
     margin-bottom: 20px;
   }
-
   .mv-description {
     font-size: 14px;
     padding: 0 10px;
   }
-
 }
+
 
 
 /* =========================
