@@ -370,6 +370,23 @@
    スマートフォン向けの調整
 ----------------------------- */
 @media screen and (max-width: 767px) {
+  .header {
+    padding: 8px 16px;    /* 上下パディングを小さく */
+  }
+
+  .header-logo img {
+    height: 28px;         /* ロゴを縮小 */
+  }
+
+  .gnav-item a {
+    font-size: 12px;      /* ナビ文字を小さく */
+    padding: 0 6px;       /* 左右余白を減らす */
+  }
+
+  /* セクションアンカーのずれ対応 */
+  .section {
+    scroll-margin-top: 60px;  /* ヘッダー高さ分だけオフセット */
+  }
 
   /* RECENT WORKS セクションの余白を調整 */
   .works {
