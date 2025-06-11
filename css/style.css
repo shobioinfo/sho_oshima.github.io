@@ -257,6 +257,7 @@
 }
 
 .skill-text li {
+  text-indent: 0;
   margin-bottom: 8px;
 }
 
