@@ -246,11 +246,14 @@
 
 /* スキル説明文 */
 .skill-text {
-  list-style: disc inside;
-  padding-left: 0;       /* 親の余白リセット */
-  margin: 0 auto 16px;   /* 上下余白だけ入れて中央で幅自動 */
-  max-width: 260px;      /* お好みで幅を固定すると見栄え良し */
-  text-align: left;      /* ← ここで左揃えに */
+  /* マーカーを外側に出す */
+  list-style-position: outside;
+  list-style-type: disc;
+
+  /* 左の余白を調整（マーカー分＋テキストのインデント分） */
+  padding-left: 1.2em;
+  margin: 0;
+  line-height: 1.6;
 }
 
 .skill-text li {
