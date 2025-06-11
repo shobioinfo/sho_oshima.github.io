@@ -192,23 +192,6 @@
     display: inline-block; /* 上付きマーカーを正確に配置するため */
   }
 
-  .equal::after {
-    content: "*";
-    font-size: 0.6em;
-    position: absolute;
-    top: -0.5em;
-    right: -0.2em;
-    line-height: 1;
-  }
-
-  /* Equal Contribution の脚注 */
-  .equal-note {
-    font-size: 0.85em;
-    color: #666;
-    margin-top: 12px;
-    text-align: left;
-  }
-
     
   /* CONTACT セクション全体 */
   .contact {
