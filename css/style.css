@@ -245,7 +245,7 @@
 }
 
 /* スキル説明文 */
-.skill-item .skill-text {
+.skill-text {
   text-align: left;       /* ← 追加 */
   list-style-position: outside;
   list-style-type: disc;
