@@ -246,10 +246,22 @@
 
 /* スキル説明文 */
 .skill-text {
+  list-style: disc inside;
+  padding-left: 0;       /* 親の余白リセット */
+  margin: 0 auto 16px;   /* 上下余白だけ入れて中央で幅自動 */
+  max-width: 260px;      /* お好みで幅を固定すると見栄え良し */
+  text-align: left;      /* ← ここで左揃えに */
+}
+
+.skill-text li {
+  margin-bottom: 8px;
+}
+
+/* .skill-text {
   font-size: 14px;
   line-height: 1.6;
   color: #333;
-}
+} */
 
 /* INTERNSHIP セクション */
 
