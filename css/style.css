@@ -390,12 +390,12 @@
   }
 
   .header-logo img {
-    height: 16px;         /* ロゴを縮小 */
+    height: 8px;         /* ロゴを縮小 */
   }
 
   .gnav-item a {
-    font-size: 3px;      /* ナビ文字を小さく */
-    padding: 0 6px;       /* 左右余白を減らす */
+    font-size: 5px;      /* ナビ文字を小さく */
+    padding: 0 3px;       /* 左右余白を減らす */
   }
 
   /* セクションアンカーのずれ対応 */
