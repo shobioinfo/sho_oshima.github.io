@@ -394,7 +394,7 @@
   }
 
   .gnav-item a {
-    font-size: 6px;      /* ナビ文字を小さく */
+    font-size: 3px;      /* ナビ文字を小さく */
     padding: 0 6px;       /* 左右余白を減らす */
   }
 
