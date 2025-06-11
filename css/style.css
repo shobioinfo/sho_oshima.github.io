@@ -245,14 +245,13 @@
 }
 
 /* スキル説明文 */
-.skill-text {
-  /* マーカーを外側に出す */
+.skill-item .skill-text {
+  text-align: left;       /* ← 追加 */
   list-style-position: outside;
   list-style-type: disc;
-
-  /* 左の余白を調整（マーカー分＋テキストのインデント分） */
   padding-left: 1.2em;
-  margin: 0;
+  margin: 0 auto 16px;
+  max-width: 260px;       /* お好みで幅を調整 */
   line-height: 1.6;
 }
 
