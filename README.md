@@ -1,1 +1,1 @@
-# [Sho Oshima](https://sho-oshima.github.io/index.html)
+# [Sho Oshima](https://shobioinfo.github.io/sho_oshima.github.io/)
