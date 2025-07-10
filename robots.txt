@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shobioinfo.github.io/sho_oshima.github.io/sitemap.xml
