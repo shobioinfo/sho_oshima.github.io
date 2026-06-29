@@ -122,6 +122,10 @@ button {
   color: var(--accent);
 }
 
+.hero-home .eyebrow {
+  font-size: clamp(0.86rem, 1.15vw, 1rem);
+}
+
 .hero-name {
   margin: 0.6rem 0 0;
   font-size: clamp(3.2rem, 10vw, 8rem);
