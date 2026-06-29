@@ -1,7 +1,6 @@
-# Sho Oshima Astro Portfolio
+# Portfolio
 
-Astro-based personal portfolio inspired by `hpprc.com`, built from the existing
-`sho_oshima.github.io` content.
+Astro-based personal portfolio.
 
 The top page is a WebGL fluid-style link portal:
 
