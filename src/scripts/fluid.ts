@@ -343,10 +343,10 @@ function startSim(canvas: HTMLCanvasElement): void {
     }
   }
 
-  // ---- colour: cool-leaning, dim → smoky, not neon ----
-  // Ruri (lapis) blue only
-  const LAPIS: [number, number, number] = [0.13, 0.26, 0.46];
-  function lapis(j: number): [number, number, number] { return [LAPIS[0] * j, LAPIS[1] * j, LAPIS[2] * j]; }
+  // ---- colour: cool-leaning, dim -> smoky, not neon ----
+  // Muted violet, matching the site accent (#8f6ed5).
+  const VIOLET: [number, number, number] = [0.56, 0.43, 0.84];
+  function violet(j: number): [number, number, number] { return [VIOLET[0] * j, VIOLET[1] * j, VIOLET[2] * j]; }
   const rnd = (a: number, b: number) => a + Math.random() * (b - a);
   // several big soft sources spread across the screen (even broad smoke, no gradient wash).
   // base positions are randomised per visit so the layout differs every load.
@@ -433,7 +433,7 @@ function startSim(canvas: HTMLCanvasElement): void {
       const ey = eby[i] + 0.21 * Math.sin(T * 0.028 + eph[i]) + 0.09 * Math.sin(T * 0.048 + eph[i] * 1.3);
       const dvx = ex - epx[i], dvy = ey - epy[i];
       epx[i] = ex; epy[i] = ey;
-      doSplat(ex, ey, dvx * 2200 - dvy * 14, dvy * 2200 + dvx * 14, lapis(0.016 * fr * dyeMul), 0.021 * srcSize);  // soft source, broad wind
+      doSplat(ex, ey, dvx * 2200 - dvy * 14, dvy * 2200 + dvx * 14, violet(0.016 * fr * dyeMul), 0.021 * srcSize);  // soft source, broad wind
     }
     // ---- cursor: a big soft local source on top, only when present ----
     if ((now - input.lastMove) < 650) {
@@ -444,7 +444,7 @@ function startSim(canvas: HTMLCanvasElement): void {
       emitY += (input.y - emitY) * (1 - Math.exp(-16 * dt));
       // bright dye on the cursor so it crosses the bloom threshold and reads as a luminous,
       // glowing trail — the main sense of interaction (mobile stays a touch gentler)
-      doSplat(emitX, emitY, (emitX - prevEmitX) * SPLAT_FORCE, (emitY - prevEmitY) * SPLAT_FORCE, lapis((0.05 + 0.09 * srcSize) * fr), 0.0095 * srcSize);
+      doSplat(emitX, emitY, (emitX - prevEmitX) * SPLAT_FORCE, (emitY - prevEmitY) * SPLAT_FORCE, violet((0.05 + 0.09 * srcSize) * fr), 0.0095 * srcSize);
       cursorActive = true;
     } else { emitX = input.x; emitY = input.y; cursorActive = false; }
     prevEmitX = emitX; prevEmitY = emitY;
@@ -489,7 +489,7 @@ function startSim(canvas: HTMLCanvasElement): void {
   resize();
   window.addEventListener('resize', resize, { passive: true });
   // seed a few smoky splats so the field isn't empty on first paint
-  for (let i = 0; i < 6; i++) { const ang = Math.random() * Math.PI * 2; doSplat(Math.random(), Math.random(), Math.cos(ang) * 800, Math.sin(ang) * 800, lapis(0.6)); }
+  for (let i = 0; i < 6; i++) { const ang = Math.random() * Math.PI * 2; doSplat(Math.random(), Math.random(), Math.cos(ang) * 800, Math.sin(ang) * 800, violet(0.6)); }
   document.addEventListener('visibilitychange', () => { visible = !document.hidden; gate(); });
   if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { inView = e.isIntersecting; gate(); }, { threshold: 0 }).observe(canvas);
   canvas.addEventListener('webglcontextlost', (e) => { e.preventDefault(); if (raf) cancelAnimationFrame(raf); raf = 0; });
