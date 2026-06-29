@@ -13,9 +13,9 @@ const canonical = new URL(Astro.url.pathname, site).href;
 const {
   title = 'Sho Oshima',
   description =
-    'Sho Oshima is a bioinformatics researcher working on graph representation learning, gene regulatory networks, and AI theory for medical and drug discovery applications.',
+    'Sho Oshima is a machine learning researcher developing theory and methods for biological systems, with a focus on representation learning, graph machine learning, and generative modeling for biomedical data.',
 } = Astro.props;
-const pageTitle = title === 'Sho Oshima' ? 'Sho Oshima - Bioinformatics & Graph Representation Learning' : title;
+const pageTitle = title === 'Sho Oshima' ? 'Sho Oshima - Computational Biology & Machine Learning' : title;
 const ogImage = `${site}${asset('/img/face.jpg')}`;
 
 const personLd = {
@@ -25,17 +25,20 @@ const personLd = {
   alternateName: '大島 将',
   url: canonical,
   image: ogImage,
+  jobTitle: 'Machine Learning Researcher',
+  address: { '@type': 'PostalAddress', addressCountry: 'Japan' },
   affiliation: {
     '@type': 'Organization',
     name: 'Graduate School of Medicine, Kyoto University',
   },
   knowsAbout: [
+    'Computational biology',
     'Bioinformatics',
     'Graph neural networks',
     'Graph representation learning',
-    'Gene regulatory networks',
-    'Drug discovery',
-    'Medical AI',
+    'Probabilistic models',
+    'Generative modeling',
+    'Biomedical data',
   ],
   sameAs: [
     'https://github.com/shobioinfo',

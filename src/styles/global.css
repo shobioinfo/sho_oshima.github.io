@@ -130,6 +130,10 @@ button {
   letter-spacing: -0.06em;
 }
 
+.hero-home .hero-name {
+  font-size: clamp(2.85rem, 8vw, 6.4rem);
+}
+
 .hero-role {
   max-width: 44rem;
   margin: 1.65rem 0 0;
