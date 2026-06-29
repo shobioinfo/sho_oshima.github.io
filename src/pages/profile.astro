@@ -1,0 +1,152 @@
+---
+import Base from '../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL;
+const asset = (path: string) => `${base}${path.replace(/^\//, '')}`;
+
+const works = [
+  {
+    type: 'Paper',
+    title: 'Supervised Graph Contrastive Learning for Gene Regulatory Networks',
+    meta: 'Accepted at ICML 2026, Jun 2025',
+    authors: 'Sho Oshima*, Yuji Okamoto*, Taisei Tosaki, Ryosuke Kojima, Yasushi Okuno',
+    href: 'https://arxiv.org/pdf/2505.17786',
+  },
+  {
+    type: 'Oral',
+    title: 'Drug Response Prediction via Transfer Learning on Graph Neural Networks with Knockdown Cell Line Gene Regulatory Networks',
+    meta: 'JSAI 2025, Osaka, May 2025',
+    authors: 'Sho Oshima, Yuji Okamoto, Taisei Tosaki, Yasushi Okuno',
+    href: 'https://www.ai-gakkai.or.jp/jsai2025/',
+  },
+  {
+    type: 'Poster',
+    title: 'Genes Feature Extraction Method in Gene Regulatory Networks Based on Distance between Graphs',
+    meta: 'JSAI 2024, Shizuoka, May 2024',
+    authors: 'Sho Oshima, Yuji Okamoto, Yohei Harada, Mayumi Kamada, Yasushi Okuno',
+    href: 'https://www.ai-gakkai.or.jp/jsai2024/',
+  },
+];
+
+const skills = [
+  {
+    name: 'Graph Learning',
+    text: 'Graph Neural Networks and graph representation learning for biological networks.',
+  },
+  {
+    name: 'Bioinformatics',
+    text: 'RNA-seq analysis, MIMIC-IV analysis, and certified JSBi bioinformatics engineer.',
+  },
+  {
+    name: 'Implementation',
+    text: 'Python, PyTorch, PyTorch Geometric, AWS, GCP, and cloud-based machine learning workflows.',
+  },
+];
+
+const experiences = [
+  {
+    company: 'EQUES Co., Ltd.',
+    role: 'AI Engineer Intern',
+    period: 'Mar 2024 -',
+    text: 'Built AWS-based LLM solutions for pharmaceutical document consistency checks.',
+  },
+  {
+    company: 'Chugai Pharmaceutical Co., Ltd.',
+    role: 'Research Intern',
+    period: 'Aug - Oct 2024',
+    text: 'Worked on contrastive learning for prognosis prediction using MIMIC-IV ICU laboratory time series.',
+  },
+  {
+    company: 'IBM Japan, Ltd.',
+    role: 'Data Scientist Intern',
+    period: 'Aug 2024',
+    text: 'Explored demand forecasting and inventory simulation as data science business applications.',
+  },
+];
+---
+
+<Base title="Sho Oshima - Profile">
+  <main>
+    <nav class="top-nav reveal" aria-label="Back to home">
+      <a class="link" href={base}>Home</a>
+    </nav>
+
+    <section class="hero profile-hero">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">Personal Page</p>
+        <h1 class="hero-name reveal">Sho Oshima</h1>
+        <p class="hero-role reveal">Master's student, Big Data Medicine Laboratory, Kyoto University</p>
+        <p class="hero-summary reveal">
+          I study computational approaches for medical and drug discovery applications, especially graph
+          representation learning for gene regulatory networks and cancer biology.
+        </p>
+      </div>
+      <figure class="hero-portrait reveal">
+        <img src={asset('/img/face.jpg')} alt="Portrait of Sho Oshima" />
+      </figure>
+    </section>
+
+    <section class="section about reveal" id="about">
+      <p class="section-kicker">About</p>
+      <div class="section-grid">
+        <h2>From life science to computational treatment design.</h2>
+        <div class="section-body">
+          <p>
+            I am a master's student in the Big Data Medicine Laboratory at Kyoto University. Through life science
+            coursework, I became fascinated by genes as programs that shape humans, and now study computational
+            approaches for diseases caused by disrupted gene regulation.
+          </p>
+          <p>
+            My current work combines biological domain knowledge and mathematical modeling to construct new AI
+            methods, especially graph representation learning with Graph Neural Networks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="works">
+      <p class="section-kicker">Selected Work</p>
+      <div class="work-list">
+        {
+          works.map((work) => (
+            <article class="work-card">
+              <div class="work-meta">
+                <span>{work.type}</span>
+                <span>{work.meta}</span>
+              </div>
+              <h3><a href={work.href} rel="noopener" target="_blank">{work.title}</a></h3>
+              <p>{work.authors}</p>
+            </article>
+          ))
+        }
+      </div>
+      <p class="note">* Equal contribution. Awards include JSAI 2024 Outstanding Paper Award and AI Prompt Grand Prix: JAIE 2024 winner.</p>
+    </section>
+
+    <section class="section reveal" id="skills">
+      <p class="section-kicker">Focus</p>
+      <div class="skill-grid">
+        {skills.map((skill) => (
+          <article class="skill-card">
+            <h3>{skill.name}</h3>
+            <p>{skill.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section reveal" id="experience">
+      <p class="section-kicker">Experience</p>
+      <div class="timeline">
+        {experiences.map((item) => (
+          <article class="timeline-item">
+            <p class="timeline-period">{item.period}</p>
+            <h3>{item.company}</h3>
+            <p class="timeline-role">{item.role}</p>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+</Base>

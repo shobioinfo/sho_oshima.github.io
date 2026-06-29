@@ -1,0 +1,92 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const base = import.meta.env.BASE_URL;
+const asset = (path: string) => `${base}${path.replace(/^\//, '')}`;
+const site = 'https://shobioinfo.github.io';
+const canonical = new URL(Astro.url.pathname, site).href;
+const {
+  title = 'Sho Oshima',
+  description =
+    'Sho Oshima is a bioinformatics researcher working on graph representation learning, gene regulatory networks, and AI theory for medical and drug discovery applications.',
+} = Astro.props;
+const pageTitle = title === 'Sho Oshima' ? 'Sho Oshima - Bioinformatics & Graph Representation Learning' : title;
+const ogImage = `${site}${asset('/img/face.jpg')}`;
+
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Sho Oshima',
+  alternateName: '大島 将',
+  url: canonical,
+  image: ogImage,
+  affiliation: {
+    '@type': 'Organization',
+    name: 'Graduate School of Medicine, Kyoto University',
+  },
+  knowsAbout: [
+    'Bioinformatics',
+    'Graph neural networks',
+    'Graph representation learning',
+    'Gene regulatory networks',
+    'Drug discovery',
+    'Medical AI',
+  ],
+  sameAs: [
+    'https://github.com/shobioinfo',
+    'https://scholar.google.co.jp/citations?view_op=list_works&hl=ja&hl=ja&user=QwiO-48AAAAJ',
+    'https://jp.linkedin.com/in/sho-oshima-508316309',
+    'https://qiita.com/shobioinfo',
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Sho Oshima" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#08090c" />
+    <meta name="color-scheme" content="dark" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sho Oshima" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" href={asset('/favicon.ico')} />
+    <link rel="manifest" href={asset('/site.webmanifest')} />
+    <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <canvas id="fluid" aria-hidden="true"></canvas>
+    <slot />
+    <script is:inline>
+      requestAnimationFrame(function () {
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          el.classList.add('is-in');
+        });
+      });
+    </script>
+    <script>import '../scripts/boot.ts';</script>
+  </body>
+</html>
