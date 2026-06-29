@@ -138,6 +138,10 @@ button {
   font-size: clamp(2.85rem, 8vw, 6.4rem);
 }
 
+.profile-hero .hero-name {
+  font-size: clamp(2.85rem, 8vw, 6.4rem);
+}
+
 .hero-role {
   max-width: 44rem;
   margin: 1.65rem 0 0;
@@ -318,6 +322,7 @@ button {
 }
 
 .work-list,
+.award-list,
 .skill-grid,
 .timeline {
   display: grid;
@@ -340,7 +345,11 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
-  color: var(--paper-faint);
+  color: var(--paper);
+}
+
+.work-meta strong {
+  font-weight: 760;
 }
 
 .work-card h3,
@@ -377,6 +386,10 @@ button {
 
 .skill-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.award-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .timeline {
@@ -434,6 +447,7 @@ button {
   }
 
   .section-grid,
+  .award-list,
   .skill-grid,
   .timeline {
     grid-template-columns: 1fr;

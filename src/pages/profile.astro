@@ -8,38 +8,77 @@ const works = [
   {
     type: 'Paper',
     title: 'Supervised Graph Contrastive Learning for Gene Regulatory Networks',
-    meta: 'Accepted at ICML 2026, Jun 2025',
+    status: 'Accepted at',
+    venue: 'ICML 2026',
+    detail: '(Acceptance Rate=26.6%), Jun 2025',
     authors: 'Sho Oshima*, Yuji Okamoto*, Taisei Tosaki, Ryosuke Kojima, Yasushi Okuno',
     href: 'https://arxiv.org/pdf/2505.17786',
   },
   {
     type: 'Oral',
     title: 'Drug Response Prediction via Transfer Learning on Graph Neural Networks with Knockdown Cell Line Gene Regulatory Networks',
-    meta: 'JSAI 2025, Osaka, May 2025',
+    status: '',
+    venue: 'JSAI 2025',
+    detail: 'Osaka, May 2025',
     authors: 'Sho Oshima, Yuji Okamoto, Taisei Tosaki, Yasushi Okuno',
     href: 'https://www.ai-gakkai.or.jp/jsai2025/',
   },
   {
     type: 'Poster',
     title: 'Genes Feature Extraction Method in Gene Regulatory Networks Based on Distance between Graphs',
-    meta: 'JSAI 2024, Shizuoka, May 2024',
+    status: '',
+    venue: 'JSAI 2024',
+    detail: 'Shizuoka, May 2024',
     authors: 'Sho Oshima, Yuji Okamoto, Yohei Harada, Mayumi Kamada, Yasushi Okuno',
     href: 'https://www.ai-gakkai.or.jp/jsai2024/',
   },
 ];
 
+const awards = [
+  {
+    title: 'JSAI 2024 Outstanding Paper Award',
+    text: 'Awarded at JSAI 2024 (The 38th Annual Conference of the Japanese Society for Artificial Intelligence).',
+  },
+  {
+    title: 'AI Prompt Grand Prix: JAIE 2024 Winner',
+    text: 'First place, AI Prompt Grand Prix: JAIE 2024.',
+  },
+];
+
+const focusItems = [
+  {
+    name: 'Biologically Grounded Representation Learning',
+    text: 'Learning representations that reflect biological structure, such as gene regulation, cellular perturbations, and disease context.',
+  },
+  {
+    name: 'Graph Machine Learning for Biology',
+    text: 'Developing graph-based learning methods for biological networks, especially gene regulatory networks and patient-specific molecular systems.',
+  },
+  {
+    name: 'Causal and Generative Perspectives',
+    text: 'Exploring how probabilistic, generative, and causal perspectives can help model complex biomedical systems under real-world observational constraints.',
+  },
+];
+
 const skills = [
   {
-    name: 'Graph Learning',
-    text: 'Graph Neural Networks and graph representation learning for biological networks.',
+    name: 'Machine Learning',
+    text: 'Graph neural networks, representation learning, probabilistic modeling, causal inference, and generative modeling.',
   },
   {
     name: 'Bioinformatics',
-    text: 'RNA-seq analysis, MIMIC-IV analysis, and certified JSBi bioinformatics engineer.',
+    text: 'Gene regulatory networks, perturbation data, RNA-seq, survival analysis, EHR/RWD analysis, and JSBi Certified Bioinformatics Engineer.',
   },
   {
-    name: 'Implementation',
-    text: 'Python, PyTorch, PyTorch Geometric, AWS, GCP, and cloud-based machine learning workflows.',
+    name: 'Engineering',
+    text: 'Python, PyTorch, PyTorch Geometric, scikit-learn, pandas, Linux, Git, Docker, AWS/GCP, and reproducible ML workflows.',
+  },
+];
+
+const lectures = [
+  {
+    title: 'Frontiers of Research on Graph Data Utilization',
+    text: 'Guest lecture for "Life Science and Networks," Lecture 15, Faculty of Future Engineering, Kitasato University, 2025/12/23.',
   },
 ];
 
@@ -75,10 +114,10 @@ const experiences = [
       <div class="hero-copy">
         <p class="eyebrow reveal">Personal Page</p>
         <h1 class="hero-name reveal">Sho Oshima</h1>
-        <p class="hero-role reveal">Master's student, Big Data Medicine Laboratory, Kyoto University</p>
+        <p class="hero-role reveal">Machine Learning Researcher / M.S., Biomedical Data Intelligence, Graduate School of Medicine, Kyoto University / Based in Japan</p>
         <p class="hero-summary reveal">
-          I study computational approaches for medical and drug discovery applications, especially graph
-          representation learning for gene regulatory networks and cancer biology.
+          Research interests include probabilistic formulations of representation learning and generative modeling,
+          with a focus on applications to biological systems.
         </p>
       </div>
       <figure class="hero-portrait reveal">
@@ -89,16 +128,18 @@ const experiences = [
     <section class="section about reveal" id="about">
       <p class="section-kicker">About</p>
       <div class="section-grid">
-        <h2>From life science to computational treatment design.</h2>
+        <h2>From biomedical constraints to Machine Learning theory.</h2>
         <div class="section-body">
           <p>
-            I am a master's student in the Big Data Medicine Laboratory at Kyoto University. Through life science
-            coursework, I became fascinated by genes as programs that shape humans, and now study computational
-            approaches for diseases caused by disrupted gene regulation.
+            I study how machine learning should be reformulated for biological systems. Rather than treating biology
+            as just another application domain, my research uses biological constraints such as gene regulation,
+            cellular perturbations, disease context, and observational bias as principles for designing new learning
+            objectives, representations, and generative models.
           </p>
           <p>
-            My current work combines biological domain knowledge and mathematical modeling to construct new AI
-            methods, especially graph representation learning with Graph Neural Networks.
+            My work lies at the intersection of representation learning, graph neural networks, probabilistic
+            modeling, and causal inference, with the goal of building machine learning theory whose solutions are
+            biologically meaningful, not merely computationally accurate.
           </p>
         </div>
       </div>
@@ -112,7 +153,11 @@ const experiences = [
             <article class="work-card">
               <div class="work-meta">
                 <span>{work.type}</span>
-                <span>{work.meta}</span>
+                <span>
+                  {work.status && `${work.status} `}
+                  <strong>{work.venue}</strong>
+                  {work.detail && (work.detail.startsWith('(') ? ` ${work.detail}` : `, ${work.detail}`)}
+                </span>
               </div>
               <h3><a href={work.href} rel="noopener" target="_blank">{work.title}</a></h3>
               <p>{work.authors}</p>
@@ -120,16 +165,52 @@ const experiences = [
           ))
         }
       </div>
-      <p class="note">* Equal contribution. Awards include JSAI 2024 Outstanding Paper Award and AI Prompt Grand Prix: JAIE 2024 winner.</p>
+      <p class="note">* Equal contribution.</p>
+    </section>
+
+    <section class="section reveal" id="awards">
+      <p class="section-kicker">Awards</p>
+      <div class="award-list">
+        {awards.map((award) => (
+          <article class="work-card">
+            <h3>{award.title}</h3>
+            <p>{award.text}</p>
+          </article>
+        ))}
+      </div>
     </section>
 
     <section class="section reveal" id="skills">
       <p class="section-kicker">Focus</p>
       <div class="skill-grid">
+        {focusItems.map((skill) => (
+          <article class="skill-card">
+            <h3>{skill.name}</h3>
+            <p>{skill.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section reveal" id="skillset">
+      <p class="section-kicker">Skills</p>
+      <div class="skill-grid">
         {skills.map((skill) => (
           <article class="skill-card">
             <h3>{skill.name}</h3>
             <p>{skill.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section reveal" id="lectures">
+      <p class="section-kicker">Invited Lectures</p>
+      <div class="work-list">
+        {lectures.map((lecture) => (
+          <article class="work-card">
+            <h3>{lecture.title}</h3>
+            <p>{lecture.text}</p>
           </article>
         ))}
       </div>
