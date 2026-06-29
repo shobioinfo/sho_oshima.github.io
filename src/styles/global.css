@@ -205,7 +205,7 @@ button {
   aspect-ratio: 1;
   object-fit: cover;
   border: 1px solid var(--line);
-  border-radius: 34% 46% 38% 42%;
+  border-radius: 28%;
   box-shadow: 0 2rem 5rem var(--shadow);
   filter: saturate(0.78) contrast(1.05);
 }
